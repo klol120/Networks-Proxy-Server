@@ -1,0 +1,11 @@
+.metric-grid-tight {
+  margin-bottom: 4px;
+}
+
+.cache-status-valid {
+  color: var(--success);
+}
+
+.cache-status-expired {
+  color: #ffb4b4;
+}

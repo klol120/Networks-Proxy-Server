@@ -1,0 +1,7 @@
+.log-stream {
+  min-height: 500px;
+}
+
+.log-line {
+  display: block;
+}

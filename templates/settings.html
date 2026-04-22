@@ -1,0 +1,68 @@
+<section class="page-toolbar card surface">
+  <div>
+    <p class="eyebrow">Runtime settings</p>
+    <h2>Adjust proxy defaults without touching code</h2>
+    <p class="lede">The settings panel keeps the admin UI intentional and concise while still exposing the current proxy configuration.</p>
+  </div>
+  <div class="toolbar-actions">
+    <span class="panel-link">Configuration stored in config.json</span>
+  </div>
+</section>
+
+<section class="settings-grid">
+  <form class="panel settings-form" id="settings-form">
+    <div class="panel-header">
+      <div>
+        <p class="section-label">Configuration</p>
+        <h3>General proxy settings</h3>
+      </div>
+      <span class="panel-link">Applies immediately</span>
+    </div>
+
+    <div class="field-group">
+      <label for="cache-timeout">Default cache timeout</label>
+      <div class="input-suffix">
+        <input id="cache-timeout" name="cache_timeout" type="number" min="1" step="1">
+        <span>seconds</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label for="proxy-port">Proxy port</label>
+      <input id="proxy-port" type="text" value="8888" readonly>
+    </div>
+
+    <div class="field-group">
+      <label for="admin-port">Admin port</label>
+      <input id="admin-port" type="text" value="8080" readonly>
+    </div>
+
+    <div class="field-group switch-field">
+      <label>
+        <input type="checkbox" id="settings-whitelist-toggle">
+        Enable whitelist-only mode
+      </label>
+      <p class="field-help">When enabled, only domains listed in the whitelist are allowed through the proxy.</p>
+    </div>
+
+    <div class="actions-row">
+      <button class="button button-primary" type="submit">Save settings</button>
+      <button class="button button-secondary" type="button" id="settings-refresh-button">Reload values</button>
+    </div>
+  </form>
+
+  <aside class="panel settings-summary">
+    <div class="panel-header">
+      <div>
+        <p class="section-label">Operational note</p>
+        <h3>What this page controls</h3>
+      </div>
+    </div>
+    <p class="summary-copy">This panel only manages proxy administration defaults. It does not alter HTTP forwarding, HTTPS tunneling, caching behavior, or logging itself.</p>
+    <ul class="summary-list">
+      <li>Cache timeout persistence</li>
+      <li>Whitelist mode toggle</li>
+      <li>Live config refresh</li>
+    </ul>
+  </aside>
+</section>

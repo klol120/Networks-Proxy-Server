@@ -1,0 +1,25 @@
+<section class="page-toolbar card surface">
+  <div>
+    <p class="eyebrow">Log stream</p>
+    <h2>Readable request and admin activity log</h2>
+    <p class="lede">This view pulls the latest proxy log lines and keeps them easy to scan with optional auto-refresh.</p>
+  </div>
+  <div class="toolbar-actions">
+    <button class="button button-secondary" id="refresh-logs-button" type="button">Refresh</button>
+    <label class="toggle-pill">
+      <input type="checkbox" id="auto-refresh-logs" checked>
+      Auto refresh
+    </label>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-header">
+    <div>
+      <p class="section-label">Recent entries</p>
+      <h3>Last 200 log lines</h3>
+    </div>
+    <span class="panel-link" id="log-count">0 lines</span>
+  </div>
+  <pre class="log-stream" id="log-output">Loading logs...</pre>
+</section>

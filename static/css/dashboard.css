@@ -1,0 +1,17 @@
+.hero {
+  background:
+    radial-gradient(circle at top right, rgba(95, 182, 255, 0.14), transparent 28%),
+    linear-gradient(180deg, rgba(18, 29, 47, 0.98), rgba(11, 20, 35, 0.94));
+}
+
+.hero-copy h2 {
+  max-width: 16ch;
+}
+
+.metric-card strong[data-stat] {
+  transition: transform 160ms ease;
+}
+
+.metric-card:hover strong[data-stat] {
+  transform: translateY(-1px);
+}

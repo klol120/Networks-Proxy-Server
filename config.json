@@ -1,0 +1,10 @@
+{
+  "blacklist": [
+    "ads.example.com",
+    "malware.example.com",
+    "blocked-test.invalid"
+  ],
+  "whitelist": [],
+  "cache_timeout": 600,
+  "use_whitelist": false
+}

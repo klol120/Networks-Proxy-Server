@@ -1,0 +1,55 @@
+<section class="page-toolbar card surface">
+  <div>
+    <p class="eyebrow">Cache manager</p>
+    <h2>Inspect cached responses and expiry state</h2>
+    <p class="lede">The proxy cache stays file-based and transparent. This page shows the stored entries without changing how caching works.</p>
+  </div>
+  <div class="toolbar-actions">
+    <button class="button button-secondary" id="refresh-cache-button" type="button">Refresh</button>
+    <button class="button button-danger" id="clear-cache-button" type="button">Clear all cache</button>
+  </div>
+</section>
+
+<section class="metric-grid metric-grid-tight" aria-label="Cache metrics">
+  <article class="metric-card">
+    <span class="metric-label">Entries</span>
+    <strong id="cache-entry-count">0</strong>
+  </article>
+  <article class="metric-card">
+    <span class="metric-label">Valid</span>
+    <strong id="cache-valid-count">0</strong>
+  </article>
+  <article class="metric-card">
+    <span class="metric-label">Expired</span>
+    <strong id="cache-expired-count">0</strong>
+  </article>
+  <article class="metric-card">
+    <span class="metric-label">Default timeout</span>
+    <strong id="cache-timeout-value">0s</strong>
+  </article>
+</section>
+
+<section class="panel">
+  <div class="panel-header">
+    <div>
+      <p class="section-label">Stored data</p>
+      <h3>Cache entries</h3>
+    </div>
+    <span class="panel-link" id="cache-last-updated">Updated just now</span>
+  </div>
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>URL</th>
+          <th>Cached at</th>
+          <th>Expires</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="cache-table-body">
+        <tr><td colspan="4" class="empty-state">Loading cache entries...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>

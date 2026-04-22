@@ -1,0 +1,12 @@
+.rule-grid {
+  align-items: start;
+}
+
+.domain-item code {
+  color: var(--text);
+}
+
+.rule-meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+}

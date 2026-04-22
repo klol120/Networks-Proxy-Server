@@ -1,0 +1,73 @@
+<section class="hero card surface">
+  <div class="hero-copy">
+    <p class="eyebrow">Live observability</p>
+    <h2>Monitor traffic, cache health, and filtering rules from one place.</h2>
+    <p class="lede">This dashboard reflects the live state of the caching proxy without interrupting proxy behavior or request flow.</p>
+  </div>
+  <div class="hero-actions">
+    <a class="button button-primary" href="/logs">View logs</a>
+    <a class="button button-secondary" href="/rules">Manage rules</a>
+  </div>
+</section>
+
+<section class="metric-grid" aria-label="Runtime metrics">
+  <article class="metric-card">
+    <span class="metric-label">Total requests</span>
+    <strong data-stat="total_requests">0</strong>
+  </article>
+  <article class="metric-card">
+    <span class="metric-label">Cache hits</span>
+    <strong data-stat="cache_hits">0</strong>
+  </article>
+  <article class="metric-card">
+    <span class="metric-label">Cache misses</span>
+    <strong data-stat="cache_misses">0</strong>
+  </article>
+  <article class="metric-card">
+    <span class="metric-label">Blocked requests</span>
+    <strong data-stat="blocked_requests">0</strong>
+  </article>
+  <article class="metric-card">
+    <span class="metric-label">Active connections</span>
+    <strong data-stat="active_connections">0</strong>
+  </article>
+  <article class="metric-card">
+    <span class="metric-label">Errors</span>
+    <strong data-stat="errors">0</strong>
+  </article>
+</section>
+
+<section class="panel-grid">
+  <article class="panel">
+    <div class="panel-header">
+      <div>
+        <p class="section-label">Recent activity</p>
+        <h3>Latest log lines</h3>
+      </div>
+      <a class="panel-link" href="/logs">Open logs</a>
+    </div>
+    <pre class="log-preview" id="dashboard-logs">Loading logs...</pre>
+  </article>
+
+  <article class="panel">
+    <div class="panel-header">
+      <div>
+        <p class="section-label">Cache snapshot</p>
+        <h3>Stored responses</h3>
+      </div>
+      <a class="panel-link" href="/cache">Open cache</a>
+    </div>
+    <div class="dashboard-summary" id="dashboard-cache-summary">Loading cache summary...</div>
+  </article>
+
+  <article class="panel">
+    <div class="panel-header">
+      <div>
+        <p class="section-label">Filtering</p>
+        <h3>Blacklist and whitelist state</h3>
+      </div>
+      <a class="panel-link" href="/rules">Open rules</a>
+    </div>
+    <div class="dashboard-summary" id="dashboard-rule-summary">Loading filter status...</div>
+  </article>
+</section>

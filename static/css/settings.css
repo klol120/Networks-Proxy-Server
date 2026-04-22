@@ -1,0 +1,9 @@
+.settings-summary {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.settings-summary .summary-copy {
+  line-height: 1.7;
+}

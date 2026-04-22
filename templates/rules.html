@@ -1,0 +1,64 @@
+<section class="page-toolbar card surface">
+  <div>
+    <p class="eyebrow">Access rules</p>
+    <h2>Manage blacklist and whitelist behavior</h2>
+    <p class="lede">Rules are persisted to <code>config.json</code> and applied immediately to new requests.</p>
+  </div>
+  <div class="toolbar-actions">
+    <label class="toggle-pill toggle-pill-inline">
+      <input type="checkbox" id="whitelist-toggle">
+      Whitelist-only mode
+    </label>
+  </div>
+</section>
+
+<section class="metric-grid metric-grid-tight" aria-label="Filtering status">
+  <article class="metric-card">
+    <span class="metric-label">Blacklist entries</span>
+    <strong id="blacklist-count">0</strong>
+  </article>
+  <article class="metric-card">
+    <span class="metric-label">Whitelist entries</span>
+    <strong id="whitelist-count">0</strong>
+  </article>
+  <article class="metric-card">
+    <span class="metric-label">Whitelist mode</span>
+    <strong id="whitelist-mode-value">OFF</strong>
+  </article>
+</section>
+
+<section class="rule-grid">
+  <article class="panel">
+    <div class="panel-header">
+      <div>
+        <p class="section-label">Blacklist</p>
+        <h3>Always blocked</h3>
+      </div>
+      <span class="panel-link">Active</span>
+    </div>
+    <form class="inline-form" id="blacklist-form">
+      <input type="text" id="blacklist-input" placeholder="example.com" autocomplete="off">
+      <button class="button button-primary" type="submit">Add</button>
+    </form>
+    <ul class="domain-list" id="blacklist-list">
+      <li class="empty-state">Loading blacklist...</li>
+    </ul>
+  </article>
+
+  <article class="panel">
+    <div class="panel-header">
+      <div>
+        <p class="section-label">Whitelist</p>
+        <h3>Allowed when enabled</h3>
+      </div>
+      <span class="panel-link">Optional</span>
+    </div>
+    <form class="inline-form" id="whitelist-form">
+      <input type="text" id="whitelist-input" placeholder="example.com" autocomplete="off">
+      <button class="button button-primary" type="submit">Add</button>
+    </form>
+    <ul class="domain-list" id="whitelist-list">
+      <li class="empty-state">Loading whitelist...</li>
+    </ul>
+  </article>
+</section>

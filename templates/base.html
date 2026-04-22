@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{PAGE_DESCRIPTION}}">
+  <title>{{PAGE_TITLE}}</title>
+  <link rel="stylesheet" href="/static/css/base.css">
+  {{EXTRA_CSS}}
+</head>
+<body class="{{BODY_CLASS}}">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">PX</div>
+        <div>
+          <div class="brand-name">CSC430 Proxy Admin</div>
+          <div class="brand-subtitle">Caching proxy control panel</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link {{ACTIVE_DASHBOARD}}" href="/dashboard">Dashboard</a>
+        <a class="nav-link {{ACTIVE_LOGS}}" href="/logs">Logs</a>
+        <a class="nav-link {{ACTIVE_CACHE}}" href="/cache">Cache</a>
+        <a class="nav-link {{ACTIVE_RULES}}" href="/rules">Rules</a>
+        <a class="nav-link {{ACTIVE_SETTINGS}}" href="/settings">Settings</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="status-row">
+          <span class="status-dot"></span>
+          Proxy running on :8888
+        </div>
+        <div class="sidebar-note">Admin UI available on :8080</div>
+      </div>
+    </aside>
+
+    <div class="main-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">{{PAGE_LABEL}}</p>
+          <h1>{{PAGE_TITLE}}</h1>
+        </div>
+        <div class="topbar-meta">Proxy administration</div>
+      </header>
+
+      <main class="content">
+        {{CONTENT}}
+      </main>
+    </div>
+  </div>
+
+  <script defer src="/static/js/common.js"></script>
+  {{EXTRA_JS}}
+</body>
+</html>
