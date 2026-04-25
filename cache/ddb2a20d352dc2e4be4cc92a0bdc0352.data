@@ -1,5 +1,5 @@
 HTTP/1.1 200 OK
-Date: Wed, 22 Apr 2026 21:07:39 GMT
+Date: Sat, 25 Apr 2026 15:35:26 GMT
 Content-Type: application/json
 Content-Length: 280
 Connection: close
@@ -14,8 +14,8 @@ Access-Control-Allow-Credentials: true
     "Accept-Encoding": "identity", 
     "Host": "httpbin.org", 
     "User-Agent": "Python-urllib/3.12", 
-    "X-Amzn-Trace-Id": "Root=1-69e9389b-5aec504f3343f2ac01e3f953"
+    "X-Amzn-Trace-Id": "Root=1-69ecdf3e-13a29d7c3d62573d45057403"
   }, 
-  "origin": "94.187.17.230", 
+  "origin": "78.108.167.51", 
   "url": "http://httpbin.org/cache/60"
 }

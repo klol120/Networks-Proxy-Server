@@ -10,7 +10,7 @@
 </head>
 <body class="{{BODY_CLASS}}">
   <div class="app-shell">
-    <aside class="sidebar">
+    <aside class="sidebar" id="app-sidebar">
       <div class="brand">
         <div class="brand-mark">PX</div>
         <div>
@@ -35,6 +35,7 @@
         <div class="sidebar-note">Admin UI available on :8080</div>
       </div>
     </aside>
+    <button class="sidebar-backdrop" id="sidebar-backdrop" type="button" aria-label="Close navigation"></button>
 
     <div class="main-shell">
       <header class="topbar">
@@ -42,6 +43,7 @@
           <p class="eyebrow">{{PAGE_LABEL}}</p>
           <h1>{{PAGE_TITLE}}</h1>
         </div>
+        <button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-expanded="false" aria-controls="app-sidebar">Menu</button>
         <div class="topbar-meta">Proxy administration</div>
       </header>
 

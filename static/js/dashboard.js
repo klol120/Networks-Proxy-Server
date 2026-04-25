@@ -25,6 +25,11 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       });
 
+      const trafficHintPanel = document.getElementById('traffic-hint-panel');
+      if (trafficHintPanel) {
+        trafficHintPanel.hidden = Number(stats.total_requests || 0) > 0;
+      }
+
       const logLines = Array.isArray(logs.lines) ? logs.lines.slice(-12) : [];
       api.setText('#dashboard-logs', logLines.length ? logLines.join('\n') : 'No recent log entries.', document);
 
@@ -54,6 +59,10 @@ window.addEventListener('DOMContentLoaded', () => {
       api.setText('#dashboard-logs', 'Unable to load dashboard data: ' + error.message, document);
       api.setText('#dashboard-cache-summary', 'Unable to load cache summary.', document);
       api.setText('#dashboard-rule-summary', 'Unable to load filter summary.', document);
+      const trafficHintPanel = document.getElementById('traffic-hint-panel');
+      if (trafficHintPanel) {
+        trafficHintPanel.hidden = true;
+      }
     }
   }
 

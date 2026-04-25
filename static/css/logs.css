@@ -1,5 +1,6 @@
 .log-stream {
   min-height: 500px;
+  border-top: 4px solid rgba(0, 132, 128, 0.42);
 }
 
 .log-line {

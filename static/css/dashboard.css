@@ -1,17 +1,19 @@
 .hero {
   background:
-    radial-gradient(circle at top right, rgba(95, 182, 255, 0.14), transparent 28%),
-    linear-gradient(180deg, rgba(18, 29, 47, 0.98), rgba(11, 20, 35, 0.94));
+    radial-gradient(circle at top right, rgba(0, 132, 128, 0.2), transparent 32%),
+    radial-gradient(circle at 18% 86%, rgba(225, 138, 70, 0.2), transparent 34%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.86), rgba(249, 241, 229, 0.84));
 }
 
 .hero-copy h2 {
-  max-width: 16ch;
+  max-width: 17ch;
 }
 
 .metric-card strong[data-stat] {
-  transition: transform 160ms ease;
+  transition: transform 160ms ease, color 160ms ease;
 }
 
 .metric-card:hover strong[data-stat] {
   transform: translateY(-1px);
+  color: var(--accent-strong);
 }

@@ -78,4 +78,51 @@
     setText: setText,
     renderEmptyState: renderEmptyState
   };
+
+  const toggleButton = document.getElementById('sidebar-toggle');
+  const sidebar = document.getElementById('app-sidebar');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  const mobileQuery = window.matchMedia('(max-width: 980px)');
+
+  function setSidebarOpen(isOpen) {
+    if (!mobileQuery.matches) {
+      document.body.classList.remove('sidebar-open');
+      if (toggleButton) {
+        toggleButton.setAttribute('aria-expanded', 'false');
+      }
+      return;
+    }
+
+    document.body.classList.toggle('sidebar-open', isOpen);
+    if (toggleButton) {
+      toggleButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+  }
+
+  if (toggleButton && sidebar && backdrop) {
+    toggleButton.addEventListener('click', function () {
+      const isOpen = !document.body.classList.contains('sidebar-open');
+      setSidebarOpen(isOpen);
+    });
+
+    backdrop.addEventListener('click', function () {
+      setSidebarOpen(false);
+    });
+
+    sidebar.querySelectorAll('.nav-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        setSidebarOpen(false);
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        setSidebarOpen(false);
+      }
+    });
+
+    mobileQuery.addEventListener('change', function () {
+      setSidebarOpen(false);
+    });
+  }
 })();

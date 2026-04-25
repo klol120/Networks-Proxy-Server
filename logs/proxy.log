@@ -149,3 +149,103 @@
 2026-04-23 00:08:08,241 [INFO] [PROXY] CSC430 Caching Proxy listening on 0.0.0.0:8888
 2026-04-23 00:08:08,241 [INFO] [PROXY] Admin interface at http://localhost:8080
 2026-04-23 00:08:09,523 [INFO] [ADMIN] Admin interface running on http://localhost:8080
+2026-04-25 18:10:48,014 [INFO] [PROXY] CSC430 Caching Proxy listening on 0.0.0.0:8888
+2026-04-25 18:10:48,017 [INFO] [PROXY] Admin interface at http://localhost:8080
+2026-04-25 18:10:48,218 [INFO] [ADMIN] Admin interface running on http://localhost:8080
+2026-04-25 18:33:37,558 [INFO] [PROXY] CSC430 Caching Proxy listening on 0.0.0.0:8888
+2026-04-25 18:33:37,558 [INFO] [PROXY] Admin interface at http://localhost:8080
+2026-04-25 18:33:38,890 [INFO] [ADMIN] Admin interface running on http://localhost:8080
+2026-04-25 18:35:16,947 [INFO] [PROXY] Server shut down.
+2026-04-25 18:35:16,984 [INFO] [REQUEST] IP=127.0.0.1 Port=58849 Method=GET URL=http://example.com/ Time=2026-04-25T18:35:16.984419
+2026-04-25 18:35:16,984 [INFO] [HTTP] 127.0.0.1:58849 -> GET http://example.com/
+2026-04-25 18:35:17,163 [INFO] [CACHE] STORED: http://example.com/ (expires in 299s)
+2026-04-25 18:35:17,163 [INFO] [HTTP] 127.0.0.1:58849 <- 837 bytes from example.com
+2026-04-25 18:35:25,724 [INFO] [REQUEST] IP=127.0.0.1 Port=58855 Method=GET URL=http://httpbin.org/get Time=2026-04-25T18:35:25.724655
+2026-04-25 18:35:25,724 [INFO] [HTTP] 127.0.0.1:58855 -> GET http://httpbin.org/get
+2026-04-25 18:35:25,726 [INFO] [CACHE] Expired: http://httpbin.org/get
+2026-04-25 18:35:26,260 [INFO] [CACHE] STORED: http://httpbin.org/get (expires in 300s)
+2026-04-25 18:35:26,260 [INFO] [HTTP] 127.0.0.1:58855 <- 500 bytes from httpbin.org
+2026-04-25 18:35:26,298 [INFO] [REQUEST] IP=127.0.0.1 Port=58859 Method=GET URL=http://127.0.0.1:58858/headers Time=2026-04-25T18:35:26.298933
+2026-04-25 18:35:26,298 [INFO] [HTTP] 127.0.0.1:58859 -> GET http://127.0.0.1:58858/headers
+2026-04-25 18:35:26,335 [INFO] [CACHE] STORED: http://127.0.0.1:58858/headers (expires in 299s)
+2026-04-25 18:35:26,374 [INFO] [HTTP] 127.0.0.1:58859 <- 102 bytes from 127.0.0.1
+2026-04-25 18:35:26,386 [INFO] [REQUEST] IP=127.0.0.1 Port=58861 Method=GET URL=http://httpbin.org/cache/60 Time=2026-04-25T18:35:26.386356
+2026-04-25 18:35:26,386 [INFO] [HTTP] 127.0.0.1:58861 -> GET http://httpbin.org/cache/60
+2026-04-25 18:35:26,387 [INFO] [CACHE] Expired: http://httpbin.org/cache/60
+2026-04-25 18:35:26,676 [INFO] [CACHE] STORED: http://httpbin.org/cache/60 (expires in 60s)
+2026-04-25 18:35:26,676 [INFO] [HTTP] 127.0.0.1:58861 <- 540 bytes from httpbin.org
+2026-04-25 18:35:28,773 [INFO] [REQUEST] IP=127.0.0.1 Port=58866 Method=GET URL=http://httpbin.org/cache/60 Time=2026-04-25T18:35:28.773970
+2026-04-25 18:35:28,773 [INFO] [HTTP] 127.0.0.1:58866 -> GET http://httpbin.org/cache/60
+2026-04-25 18:35:28,798 [INFO] [CACHE] HIT: http://httpbin.org/cache/60
+2026-04-25 18:35:28,798 [INFO] [HTTP] Cache HIT for http://httpbin.org/cache/60
+2026-04-25 18:35:32,878 [INFO] [REQUEST] IP=127.0.0.1 Port=58873 Method=GET URL=http://blocked-test.invalid/ Time=2026-04-25T18:35:32.878742
+2026-04-25 18:35:32,878 [INFO] [HTTP] 127.0.0.1:58873 -> GET http://blocked-test.invalid/
+2026-04-25 18:35:32,878 [WARNING] [FILTER] Blocked (blacklist): blocked-test.invalid
+2026-04-25 18:35:32,895 [INFO] [REQUEST] IP=127.0.0.1 Port=58874 Method=CONNECT URL=httpbin.org:443 Time=2026-04-25T18:35:32.894779
+2026-04-25 18:35:32,895 [INFO] [HTTPS] CONNECT tunnel: 127.0.0.1:58874 -> httpbin.org:443
+2026-04-25 18:35:33,025 [INFO] [HTTPS] Tunnel closed: httpbin.org:443 (0 bytes relayed)
+2026-04-25 18:35:37,225 [INFO] [REQUEST] IP=127.0.0.1 Port=58880 Method=GET URL=http://httpbin.org/get Time=2026-04-25T18:35:37.225302
+2026-04-25 18:35:37,227 [INFO] [HTTP] 127.0.0.1:58880 -> GET http://httpbin.org/get
+2026-04-25 18:35:37,228 [INFO] [REQUEST] IP=127.0.0.1 Port=58881 Method=GET URL=http://httpbin.org/get Time=2026-04-25T18:35:37.228181
+2026-04-25 18:35:37,228 [INFO] [HTTP] 127.0.0.1:58881 -> GET http://httpbin.org/get
+2026-04-25 18:35:37,248 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 18:35:37,250 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 18:35:37,250 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 18:35:37,250 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 18:35:37,252 [INFO] [REQUEST] IP=127.0.0.1 Port=58882 Method=GET URL=http://httpbin.org/get Time=2026-04-25T18:35:37.252962
+2026-04-25 18:35:37,252 [INFO] [HTTP] 127.0.0.1:58882 -> GET http://httpbin.org/get
+2026-04-25 18:35:37,252 [INFO] [REQUEST] IP=127.0.0.1 Port=58883 Method=GET URL=http://httpbin.org/get Time=2026-04-25T18:35:37.252962
+2026-04-25 18:35:37,252 [INFO] [HTTP] 127.0.0.1:58883 -> GET http://httpbin.org/get
+2026-04-25 18:35:37,252 [INFO] [REQUEST] IP=127.0.0.1 Port=58884 Method=GET URL=http://httpbin.org/get Time=2026-04-25T18:35:37.252962
+2026-04-25 18:35:37,252 [INFO] [HTTP] 127.0.0.1:58884 -> GET http://httpbin.org/get
+2026-04-25 18:35:37,260 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 18:35:37,260 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 18:35:37,261 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 18:35:37,262 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 18:35:37,262 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 18:35:37,262 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 18:35:53,778 [INFO] [REQUEST] IP=127.0.0.1 Port=58890 Method=GET URL=http://httpbin.org/get Time=2026-04-25T18:35:53.778854
+2026-04-25 18:35:53,778 [INFO] [HTTP] 127.0.0.1:58890 -> GET http://httpbin.org/get
+2026-04-25 18:35:53,778 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 18:35:53,778 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 18:35:53,827 [INFO] [REQUEST] IP=127.0.0.1 Port=58892 Method=GET URL=http://127.0.0.1:58891/headers Time=2026-04-25T18:35:53.827760
+2026-04-25 18:35:53,828 [INFO] [HTTP] 127.0.0.1:58892 -> GET http://127.0.0.1:58891/headers
+2026-04-25 18:35:53,829 [INFO] [CACHE] STORED: http://127.0.0.1:58891/headers (expires in 300s)
+2026-04-25 18:35:53,829 [INFO] [HTTP] 127.0.0.1:58892 <- 102 bytes from 127.0.0.1
+2026-04-25 18:35:53,877 [INFO] [REQUEST] IP=127.0.0.1 Port=58894 Method=GET URL=http://httpbin.org/cache/60 Time=2026-04-25T18:35:53.877801
+2026-04-25 18:35:53,878 [INFO] [HTTP] 127.0.0.1:58894 -> GET http://httpbin.org/cache/60
+2026-04-25 18:35:53,879 [INFO] [CACHE] HIT: http://httpbin.org/cache/60
+2026-04-25 18:35:53,879 [INFO] [HTTP] Cache HIT for http://httpbin.org/cache/60
+2026-04-25 18:35:55,961 [INFO] [REQUEST] IP=127.0.0.1 Port=58898 Method=GET URL=http://httpbin.org/cache/60 Time=2026-04-25T18:35:55.961999
+2026-04-25 18:35:55,963 [INFO] [HTTP] 127.0.0.1:58898 -> GET http://httpbin.org/cache/60
+2026-04-25 18:35:55,963 [INFO] [CACHE] HIT: http://httpbin.org/cache/60
+2026-04-25 18:35:55,963 [INFO] [HTTP] Cache HIT for http://httpbin.org/cache/60
+2026-04-25 18:36:00,029 [INFO] [REQUEST] IP=127.0.0.1 Port=58903 Method=GET URL=http://blocked-test.invalid/ Time=2026-04-25T18:36:00.029045
+2026-04-25 18:36:00,029 [INFO] [HTTP] 127.0.0.1:58903 -> GET http://blocked-test.invalid/
+2026-04-25 18:36:00,029 [WARNING] [FILTER] Blocked (blacklist): blocked-test.invalid
+2026-04-25 18:36:00,029 [INFO] [REQUEST] IP=127.0.0.1 Port=58904 Method=CONNECT URL=httpbin.org:443 Time=2026-04-25T18:36:00.029045
+2026-04-25 18:36:00,029 [INFO] [HTTPS] CONNECT tunnel: 127.0.0.1:58904 -> httpbin.org:443
+2026-04-25 18:36:00,195 [INFO] [HTTPS] Tunnel closed: httpbin.org:443 (0 bytes relayed)
+2026-04-25 18:36:04,396 [INFO] [REQUEST] IP=127.0.0.1 Port=58911 Method=GET URL=http://httpbin.org/get Time=2026-04-25T18:36:04.396080
+2026-04-25 18:36:04,396 [INFO] [HTTP] 127.0.0.1:58911 -> GET http://httpbin.org/get
+2026-04-25 18:36:04,396 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 18:36:04,396 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 18:36:04,412 [INFO] [REQUEST] IP=127.0.0.1 Port=58912 Method=GET URL=http://httpbin.org/get Time=2026-04-25T18:36:04.412878
+2026-04-25 18:36:04,412 [INFO] [HTTP] 127.0.0.1:58912 -> GET http://httpbin.org/get
+2026-04-25 18:36:04,412 [INFO] [REQUEST] IP=127.0.0.1 Port=58913 Method=GET URL=http://httpbin.org/get Time=2026-04-25T18:36:04.412878
+2026-04-25 18:36:04,412 [INFO] [HTTP] 127.0.0.1:58913 -> GET http://httpbin.org/get
+2026-04-25 18:36:04,412 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 18:36:04,412 [INFO] [REQUEST] IP=127.0.0.1 Port=58915 Method=GET URL=http://httpbin.org/get Time=2026-04-25T18:36:04.412878
+2026-04-25 18:36:04,412 [INFO] [HTTP] 127.0.0.1:58915 -> GET http://httpbin.org/get
+2026-04-25 18:36:04,412 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 18:36:04,412 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 18:36:04,427 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 18:36:04,427 [INFO] [REQUEST] IP=127.0.0.1 Port=58914 Method=GET URL=http://httpbin.org/get Time=2026-04-25T18:36:04.427574
+2026-04-25 18:36:04,427 [INFO] [HTTP] 127.0.0.1:58914 -> GET http://httpbin.org/get
+2026-04-25 18:36:04,428 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 18:36:04,428 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 18:36:04,429 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 18:36:04,429 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 18:36:23,757 [INFO] [PROXY] CSC430 Caching Proxy listening on 0.0.0.0:8888
+2026-04-25 18:36:23,757 [INFO] [PROXY] Admin interface at http://localhost:8080
+2026-04-25 18:36:25,026 [INFO] [ADMIN] Admin interface running on http://localhost:8080
