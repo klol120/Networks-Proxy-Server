@@ -5,7 +5,7 @@
 **Dr. Louma Chadad**  
 **Spring 2026**
 
-![LAU Logo](image.png)
+![LAU Logo](soas-logo-social-media.jpg)
 ---
 
 **By**
@@ -50,18 +50,12 @@
 6. [Testing and Verification](#6-testing-and-verification)
    - 6.1 [Test Descriptions](#61-test-descriptions)
    - 6.2 [Test Results](#62-test-results)
-7. [Challenges and Solutions](#7-challenges-and-solutions)
-   - 7.1 [Parsing CONNECT vs HTTP](#71-parsing-connect-vs-http)
-   - 7.2 [Thread-Safe Cache Access](#72-thread-safe-cache-access)
-   - 7.3 [Cache Invalidation Priority](#73-cache-invalidation-priority)
-   - 7.4 [Non-Blocking HTTPS Relay](#74-non-blocking-https-relay)
-   - 7.5 [Configuration Persistence](#75-configuration-persistence)
-8. [Work Division](#8-work-division)
-9. [Conclusion](#9-conclusion)
-   - 9.1 [Key Achievements](#91-key-achievements)
-   - 9.2 [Learning Outcomes](#92-learning-outcomes)
-   - 9.3 [Future Enhancements](#93-future-enhancements)
-10. [References](#10-references)
+7. [Work Division](#7-work-division)
+8. [Conclusion](#8-conclusion)
+   - 8.1 [Key Achievements](#81-key-achievements)
+   - 8.2 [Learning Outcomes](#82-learning-outcomes)
+   - 8.3 [Future Enhancements](#83-future-enhancements)
+9. [References](#9-references)
 
 ---
 
@@ -602,31 +596,7 @@ Spawns 5 threads simultaneously, each making a GET to `http://httpbin.org/get` t
 
 ---
 
-## 7. Challenges and Solutions
-
-### 7.1 Parsing CONNECT vs HTTP
-
-The first major challenge was that both CONNECT and regular HTTP requests arrive as identical raw TCP bytes, but their URL formats are completely different. A regular GET has a full URL like `http://example.com/path`, while CONNECT has only `host:port`. Calling `urlparse()` on a CONNECT URL would silently misparse it. This was solved by checking the method first and branching before any URL parsing, with the CONNECT branch using `rsplit(":", 1)` to extract host and port directly.
-
-### 7.2 Thread-Safe Cache Access
-
-Multiple threads can read and write the cache directory simultaneously — one thread might be storing a new response while another is checking for an existing one. Without locking, this could produce corrupted `.meta` files or missing `.data` files. This was solved by giving `CacheManager` its own internal `threading.Lock()` that wraps every file operation, ensuring reads and writes are always atomic from the perspective of any individual cache entry.
-
-### 7.3 Cache Invalidation Priority
-
-Real-world HTTP responses use three different mechanisms to communicate caching intent: `Cache-Control: no-store`, `Cache-Control: max-age=N`, and the `Expires` header. These needed to be checked in the correct priority order — `no-store` overrides everything, `max-age` takes priority over `Expires`, and the default timeout only applies when neither is present. Getting this order wrong would result in caching responses that should not be cached, or ignoring explicit expiry times from the server.
-
-### 7.4 Non-Blocking HTTPS Relay
-
-A naive implementation of the HTTPS tunnel using two blocking `recv/send` loops would deadlock — each side waiting for the other to send first. This was solved using `select()` to monitor both sockets simultaneously in a single loop, only reading from a socket when data is actually available. A 30-second inactivity timeout was added so idle tunnels close automatically without leaking threads or file descriptors.
-
-### 7.5 Configuration Persistence
-
-Any change made through the admin interface — adding a blacklist entry, updating the cache timeout — needed to survive a proxy restart. The shared `config` dictionary is updated in memory first (under `config_lock`), then immediately written to `config.json` via `save_config()`. On startup, `load_config()` reads this file back and merges it with the defaults, so no configuration is ever lost between runs.
-
----
-
-## 8. Work Division
+## 7. Work Division
 
 The project was developed collaboratively, with each team member taking primary responsibility for specific sections of the codebase while all members contributed to the overall architecture design, integration, and testing.
 
@@ -640,9 +610,9 @@ Collaborative work included the overall system architecture, the shared configur
 
 ---
 
-## 9. Conclusion
+## 8. Conclusion
 
-### 9.1 Key Achievements
+### 8.1 Key Achievements
 
 The CSC430 Caching Proxy Server successfully implements all required features outlined in the project specification, along with both bonus components, resulting in a fully functional and well-structured proxy solution built entirely on Python's standard library with no external dependencies.
 
@@ -662,7 +632,7 @@ The CSC430 Caching Proxy Server successfully implements all required features ou
 
 **Web-Based Admin Interface (Bonus):** A complete five-page web dashboard provides live visibility into proxy behavior — including real-time stats, a log viewer, a cache browser, blacklist and whitelist management, and a settings panel — all backed by a REST API and without requiring the proxy to restart for any configuration change.
 
-### 9.2 Learning Outcomes
+### 8.2 Learning Outcomes
 
 Developing this project provided hands-on experience with several core networking and systems programming concepts:
 
@@ -674,7 +644,7 @@ Developing this project provided hands-on experience with several core networkin
 
 **System Design:** Structuring a single file that cleanly separates configuration management, caching, filtering, forwarding, tunneling, and the admin interface — while keeping all of it thread-safe — required careful thinking about shared state, responsibility boundaries, and the right level of abstraction.
 
-### 9.3 Future Enhancements
+### 8.3 Future Enhancements
 
 While the current implementation fully satisfies all project requirements, several extensions could make the proxy more production-capable:
 
@@ -686,7 +656,7 @@ While the current implementation fully satisfies all project requirements, sever
 
 ---
 
-## 10. References
+## 9. References
 
 - Python Software Foundation. (2024). *socket — Low-level networking interface*. https://docs.python.org/3/library/socket.html
 - Python Software Foundation. (2024). *threading — Thread-based parallelism*. https://docs.python.org/3/library/threading.html
