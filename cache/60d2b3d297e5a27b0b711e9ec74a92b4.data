@@ -1,7 +1,7 @@
 HTTP/1.1 200 OK
-Date: Sat, 25 Apr 2026 15:35:25 GMT
+Date: Sat, 25 Apr 2026 20:38:23 GMT
 Content-Type: application/json
-Content-Length: 275
+Content-Length: 276
 Connection: close
 Server: gunicorn/19.9.0
 Access-Control-Allow-Origin: *
@@ -12,9 +12,9 @@ Access-Control-Allow-Credentials: true
   "headers": {
     "Accept-Encoding": "identity", 
     "Host": "httpbin.org", 
-    "User-Agent": "Python-urllib/3.12", 
-    "X-Amzn-Trace-Id": "Root=1-69ecdf3d-57381bd95054691332f3f161"
+    "User-Agent": "Python-urllib/3.14", 
+    "X-Amzn-Trace-Id": "Root=1-69ed263f-5fd89fa3693fa7195174428c"
   }, 
-  "origin": "78.108.167.51", 
+  "origin": "217.150.82.144", 
   "url": "http://httpbin.org/get"
 }

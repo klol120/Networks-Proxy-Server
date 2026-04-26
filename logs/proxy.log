@@ -249,3 +249,87 @@
 2026-04-25 18:36:23,757 [INFO] [PROXY] CSC430 Caching Proxy listening on 0.0.0.0:8888
 2026-04-25 18:36:23,757 [INFO] [PROXY] Admin interface at http://localhost:8080
 2026-04-25 18:36:25,026 [INFO] [ADMIN] Admin interface running on http://localhost:8080
+2026-04-25 23:37:40,837 [INFO] [PROXY] CSC430 Caching Proxy listening on 0.0.0.0:8888
+2026-04-25 23:37:40,837 [INFO] [PROXY] Admin interface at http://localhost:8080
+2026-04-25 23:37:40,846 [INFO] [ADMIN] Admin interface running on http://localhost:8080
+2026-04-25 23:37:45,950 [INFO] [REQUEST] IP=127.0.0.1 Port=53114 Method=GET URL=http://httpbin.org/get Time=2026-04-25T23:37:45.949995
+2026-04-25 23:37:45,951 [INFO] [HTTP] 127.0.0.1:53114 -> GET http://httpbin.org/get
+2026-04-25 23:37:45,973 [INFO] [CACHE] Expired: http://httpbin.org/get
+2026-04-25 23:37:46,032 [ERROR] [HTTP] Error forwarding to httpbin.org:80 — [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+2026-04-25 23:37:46,091 [INFO] [REQUEST] IP=127.0.0.1 Port=53117 Method=GET URL=http://127.0.0.1:53116/headers Time=2026-04-25T23:37:46.091554
+2026-04-25 23:37:46,092 [INFO] [HTTP] 127.0.0.1:53117 -> GET http://127.0.0.1:53116/headers
+2026-04-25 23:37:46,111 [INFO] [CACHE] STORED: http://127.0.0.1:53116/headers (expires in 299s)
+2026-04-25 23:37:46,111 [INFO] [HTTP] 127.0.0.1:53117 <- 102 bytes from 127.0.0.1
+2026-04-25 23:37:46,153 [INFO] [REQUEST] IP=127.0.0.1 Port=53119 Method=GET URL=http://httpbin.org/cache/60 Time=2026-04-25T23:37:46.153027
+2026-04-25 23:37:46,153 [INFO] [HTTP] 127.0.0.1:53119 -> GET http://httpbin.org/cache/60
+2026-04-25 23:37:46,153 [INFO] [CACHE] Expired: http://httpbin.org/cache/60
+2026-04-25 23:37:46,168 [ERROR] [HTTP] Error forwarding to httpbin.org:80 — [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+2026-04-25 23:37:48,192 [INFO] [REQUEST] IP=127.0.0.1 Port=65173 Method=GET URL=http://blocked-test.invalid/ Time=2026-04-25T23:37:48.192270
+2026-04-25 23:37:48,192 [INFO] [HTTP] 127.0.0.1:65173 -> GET http://blocked-test.invalid/
+2026-04-25 23:37:48,192 [WARNING] [FILTER] Blocked (blacklist): blocked-test.invalid
+2026-04-25 23:37:48,194 [INFO] [REQUEST] IP=127.0.0.1 Port=65174 Method=CONNECT URL=httpbin.org:443 Time=2026-04-25T23:37:48.194315
+2026-04-25 23:37:48,194 [INFO] [HTTPS] CONNECT tunnel: 127.0.0.1:65174 -> httpbin.org:443
+2026-04-25 23:37:48,203 [ERROR] [HTTPS] Tunnel error for httpbin.org:443 — [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+2026-04-25 23:37:52,345 [INFO] [REQUEST] IP=127.0.0.1 Port=62799 Method=GET URL=http://httpbin.org/get Time=2026-04-25T23:37:52.345445
+2026-04-25 23:37:52,345 [INFO] [HTTP] 127.0.0.1:62799 -> GET http://httpbin.org/get
+2026-04-25 23:37:52,359 [INFO] [REQUEST] IP=127.0.0.1 Port=62798 Method=GET URL=http://httpbin.org/get Time=2026-04-25T23:37:52.359019
+2026-04-25 23:37:52,359 [ERROR] [HTTP] Error forwarding to httpbin.org:80 — [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+2026-04-25 23:37:52,359 [INFO] [HTTP] 127.0.0.1:62798 -> GET http://httpbin.org/get
+2026-04-25 23:37:52,374 [ERROR] [HTTP] Error forwarding to httpbin.org:80 — [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+2026-04-25 23:37:52,379 [INFO] [REQUEST] IP=127.0.0.1 Port=58869 Method=GET URL=http://httpbin.org/get Time=2026-04-25T23:37:52.379518
+2026-04-25 23:37:52,379 [INFO] [REQUEST] IP=127.0.0.1 Port=58844 Method=GET URL=http://httpbin.org/get Time=2026-04-25T23:37:52.379701
+2026-04-25 23:37:52,379 [INFO] [HTTP] 127.0.0.1:58869 -> GET http://httpbin.org/get
+2026-04-25 23:37:52,380 [INFO] [HTTP] 127.0.0.1:58844 -> GET http://httpbin.org/get
+2026-04-25 23:37:52,380 [INFO] [REQUEST] IP=127.0.0.1 Port=58845 Method=GET URL=http://httpbin.org/get Time=2026-04-25T23:37:52.380686
+2026-04-25 23:37:52,381 [INFO] [HTTP] 127.0.0.1:58845 -> GET http://httpbin.org/get
+2026-04-25 23:37:52,381 [ERROR] [HTTP] Error forwarding to httpbin.org:80 — [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+2026-04-25 23:37:52,381 [ERROR] [HTTP] Error forwarding to httpbin.org:80 — [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+2026-04-25 23:37:52,382 [ERROR] [HTTP] Error forwarding to httpbin.org:80 — [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+2026-04-25 23:38:18,703 [INFO] [PROXY] CSC430 Caching Proxy listening on 0.0.0.0:8888
+2026-04-25 23:38:18,704 [INFO] [PROXY] Admin interface at http://localhost:8080
+2026-04-25 23:38:18,720 [INFO] [ADMIN] Admin interface running on http://localhost:8080
+2026-04-25 23:38:23,823 [INFO] [REQUEST] IP=127.0.0.1 Port=52793 Method=GET URL=http://httpbin.org/get Time=2026-04-25T23:38:23.823851
+2026-04-25 23:38:23,824 [INFO] [HTTP] 127.0.0.1:52793 -> GET http://httpbin.org/get
+2026-04-25 23:38:24,093 [INFO] [CACHE] STORED: http://httpbin.org/get (expires in 299s)
+2026-04-25 23:38:24,093 [INFO] [HTTP] 127.0.0.1:52793 <- 501 bytes from httpbin.org
+2026-04-25 23:38:24,151 [INFO] [REQUEST] IP=127.0.0.1 Port=52796 Method=GET URL=http://127.0.0.1:52795/headers Time=2026-04-25T23:38:24.150965
+2026-04-25 23:38:24,151 [INFO] [HTTP] 127.0.0.1:52796 -> GET http://127.0.0.1:52795/headers
+2026-04-25 23:38:24,157 [INFO] [CACHE] STORED: http://127.0.0.1:52795/headers (expires in 299s)
+2026-04-25 23:38:24,158 [INFO] [HTTP] 127.0.0.1:52796 <- 102 bytes from 127.0.0.1
+2026-04-25 23:38:24,212 [INFO] [REQUEST] IP=127.0.0.1 Port=52798 Method=GET URL=http://httpbin.org/cache/60 Time=2026-04-25T23:38:24.212783
+2026-04-25 23:38:24,213 [INFO] [HTTP] 127.0.0.1:52798 -> GET http://httpbin.org/cache/60
+2026-04-25 23:38:24,467 [INFO] [CACHE] STORED: http://httpbin.org/cache/60 (expires in 59s)
+2026-04-25 23:38:24,467 [INFO] [HTTP] 127.0.0.1:52798 <- 541 bytes from httpbin.org
+2026-04-25 23:38:26,550 [INFO] [REQUEST] IP=127.0.0.1 Port=52804 Method=GET URL=http://httpbin.org/cache/60 Time=2026-04-25T23:38:26.550753
+2026-04-25 23:38:26,551 [INFO] [HTTP] 127.0.0.1:52804 -> GET http://httpbin.org/cache/60
+2026-04-25 23:38:26,597 [INFO] [CACHE] HIT: http://httpbin.org/cache/60
+2026-04-25 23:38:26,597 [INFO] [HTTP] Cache HIT for http://httpbin.org/cache/60
+2026-04-25 23:38:30,675 [INFO] [REQUEST] IP=127.0.0.1 Port=52809 Method=GET URL=http://blocked-test.invalid/ Time=2026-04-25T23:38:30.675617
+2026-04-25 23:38:30,675 [INFO] [HTTP] 127.0.0.1:52809 -> GET http://blocked-test.invalid/
+2026-04-25 23:38:30,676 [WARNING] [FILTER] Blocked (blacklist): blocked-test.invalid
+2026-04-25 23:38:30,689 [INFO] [REQUEST] IP=127.0.0.1 Port=52810 Method=CONNECT URL=httpbin.org:443 Time=2026-04-25T23:38:30.689081
+2026-04-25 23:38:30,689 [INFO] [HTTPS] CONNECT tunnel: 127.0.0.1:52810 -> httpbin.org:443
+2026-04-25 23:38:30,829 [INFO] [HTTPS] Tunnel closed: httpbin.org:443 (0 bytes relayed)
+2026-04-25 23:38:35,070 [INFO] [REQUEST] IP=127.0.0.1 Port=52816 Method=GET URL=http://httpbin.org/get Time=2026-04-25T23:38:35.070157
+2026-04-25 23:38:35,070 [INFO] [HTTP] 127.0.0.1:52816 -> GET http://httpbin.org/get
+2026-04-25 23:38:35,071 [INFO] [REQUEST] IP=127.0.0.1 Port=52817 Method=GET URL=http://httpbin.org/get Time=2026-04-25T23:38:35.071016
+2026-04-25 23:38:35,071 [INFO] [REQUEST] IP=127.0.0.1 Port=52818 Method=GET URL=http://httpbin.org/get Time=2026-04-25T23:38:35.071548
+2026-04-25 23:38:35,071 [INFO] [HTTP] 127.0.0.1:52817 -> GET http://httpbin.org/get
+2026-04-25 23:38:35,072 [INFO] [REQUEST] IP=127.0.0.1 Port=52819 Method=GET URL=http://httpbin.org/get Time=2026-04-25T23:38:35.071992
+2026-04-25 23:38:35,072 [INFO] [HTTP] 127.0.0.1:52818 -> GET http://httpbin.org/get
+2026-04-25 23:38:35,072 [INFO] [HTTP] 127.0.0.1:52819 -> GET http://httpbin.org/get
+2026-04-25 23:38:35,094 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 23:38:35,095 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 23:38:35,095 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 23:38:35,096 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 23:38:35,096 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 23:38:35,096 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 23:38:35,097 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 23:38:35,098 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 23:38:35,098 [INFO] [REQUEST] IP=127.0.0.1 Port=52820 Method=GET URL=http://httpbin.org/get Time=2026-04-25T23:38:35.098313
+2026-04-25 23:38:35,098 [INFO] [HTTP] 127.0.0.1:52820 -> GET http://httpbin.org/get
+2026-04-25 23:38:35,098 [INFO] [CACHE] HIT: http://httpbin.org/get
+2026-04-25 23:38:35,099 [INFO] [HTTP] Cache HIT for http://httpbin.org/get
+2026-04-25 23:40:41,811 [INFO] [PROXY] CSC430 Caching Proxy listening on 0.0.0.0:8888
+2026-04-25 23:40:41,812 [INFO] [PROXY] Admin interface at http://localhost:8080
+2026-04-25 23:40:41,828 [INFO] [ADMIN] Admin interface running on http://localhost:8080
